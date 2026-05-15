@@ -11,6 +11,7 @@
 	<feature name="com.oplus.software.children_space_google_play_exp"/>
 	<feature name="com.oplus.software.children_space_google_play_gdpr"/>
 	<feature name="oplus.software.gallery.olive"/>
+	<feature name="android.hardware.fingerprint"/>
 	<feature name="android.hardware.biometrics.face"/>
 	<feature name="android.software.credentials"/>
 	<feature name="oplus.software.support_gp.op_weather"/>
