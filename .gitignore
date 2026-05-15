@@ -1,0 +1,68 @@
+# Generated build artifacts
+/build/
+/build/**
+/build/baserom/
+/build/baserom/**
+
+# Temporary working directories
+/tmp/
+/tmp/**
+tmp
+*.tmp
+*.temp
+
+# Apktool / smali / dex outputs
+/out/
+/out/**
+apktool.yml
+*.apktool
+classes*.dex
+classes*.dex.out
+*.dex
+
+# Jar / smali temp directories
+/jar_temp/
+/jar_temp/**
+
+# Packaging artifacts
+*.img
+*.img.gz
+payload.bin
+
+# Backup / patch files
+*.orig
+*.rej
+*.bak
+*.patched
+
+# Logs
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+
+# IDEs and editors
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+*.swp
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node
+node_modules/
+
+# Gradle
+.gradle/
+
+# Other
+*.class
+*.o
+*.obj
