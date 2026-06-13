@@ -3,14 +3,21 @@
 
 baserom="$1"
 localbuild="$2"
+repo_name="$3"
+prefix_id="$4"
+builder_name="$5"
+builder_id="$6"
 work_dir=$(pwd)
 tools_dir=${work_dir}/bin/$(uname)/$(uname -m)export PATH=$(pwd)/bin/$(uname)/$(uname -m)/:$PATH
 chmod 777 ${work_dir}/bin/*
 chmod 777 ${work_dir}/bin/Linux/x86_64/*
 source $work_dir/functions.sh
 check unzip aria2c curl 7z zip java zipalign python3 zstd bc xmlstarlet aapt
+python3 $work_dir/notify.py download "$repo_name" "$baserom" "$prefix_id" "$builder_name" "$builder_id"
 source "$work_dir/bin/ddevice/getROM.sh" "$baserom"
+BLOB="$work_dir/bin/package/UpdateFile/OOSExtenstionUni"
 
+python3 $work_dir/notify.py unpack "$repo_name" "$baserom" "$prefix_id" "$builder_name" "$builder_id"
 if unzip -l ${baserom} | grep -q "payload.bin"; then
     baserom_type="payload"
     echo "[UNPACK] - This is payload.bin ROM!Vaildation..."
@@ -35,7 +42,7 @@ echo "[UNPACK] - Extracting files from BASEROM [payload.bin]"
 unzip ${baserom} payload.bin -d build/baserom >/dev/null 2>&1 || error "Extracting [payload.bin] error"
 echo "[UNPACK] - [payload.bin] extracted."
 echo "[UNPACK] - Unpacking BASEROM [payload.bin]"
-payload-dumper-go -o build/baserom/images/ build/baserom/payload.bin >/dev/null 2>&1 || error "Unpacking [payload.bin] failed"        
+payload-extract extract -o build/baserom/images/ build/baserom/payload.bin >/dev/null 2>&1 || error "Unpacking [payload.bin] failed"        
 for part in system system_ext product vendor odm my_product my_engineering my_stock my_carrier my_region my_bigball my_heytap my_manifest ;do
     extract_partition $work_dir/build/baserom/images/${part}.img $work_dir/build/baserom/images
     PACK_TYPE=$(cat $work_dir/bin/ddevice/fstype.txt)
@@ -44,9 +51,10 @@ done
 echo "[INFO] - Gathering Devices Infomations"
 source $work_dir/bin/ddevice/fetchINFO.sh
 bash $work_dir/bin/ddevice/modifyINFO.sh
+main
 
-echo "[INFO] - ROM Version: $ROMVERSION"
-echo "[INFO] - Android Version: $ANDROID_VER"
+# Gửi thông báo đang Build với đầy đủ Codename và Version
+python3 $work_dir/notify.py build "$repo_name" "$baserom" "$prefix_id" "$builder_name" "$builder_id"
 
 rm -rf config
 if [ -f $work_dir/${baserom}.zip ]; then
@@ -54,9 +62,12 @@ if [ -f $work_dir/${baserom}.zip ]; then
 fi
 rm -rf build/baserom/payload.bin
 bash $work_dir/bin/package/install.sh
+MY_STOCK="$work_dir/build/baserom/images/my_stock"
 
 remove_fsv "$work_dir/build/baserom/images/system/system/framework"
 remove_fsv "$work_dir/build/baserom/images/system_ext"
+
+cp -rf $BLOB/feature_com.hma.otablock.xml $MY_STOCK/etc/extension
 
 
 echo "[REPACK] - Packing partition..."

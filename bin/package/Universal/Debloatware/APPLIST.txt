@@ -13,6 +13,7 @@ Health
 Music
 SceneService
 OPCommunity
+KeKeUserCenterMember
 OplusEmail
 OplusQuickGames
 Stk

@@ -1,10 +1,16 @@
+#!/bin/bash
+# SPDX-License-Identifier: GPL-3.0
+
 work_dir=$(pwd)
 source $work_dir/functions.sh
+source $work_dir/bin/ddevice/fetchINFO.sh
 MAIN_FOLDER="$work_dir/build/baserom/images"
 MY_STOCK="$work_dir/build/baserom/images/my_stock"
 BLOB="$work_dir/bin/package/UpdateFile/COSExtenstion16"
 BASE_REGION=$(cat $work_dir/bin/ddevice/rom_region.txt)
 android=$(cat $work_dir/bin/ddevice/androidver.txt)
+
+if [[ $ROMVERSION != "16.0.7" ]]; then
 
 sed -i "s/persist.sys.oplus.anim_level=2/persist.sys.oplus.anim_level=1/g" $MAIN_FOLDER/my_product/build.prop
 
@@ -74,3 +80,4 @@ if [[ $BASE_REGION == "Domestic" && $android == "16" ]]; then
   cp -rf $BLOB/feature/* $MY_STOCK/etc/extension
 fi
 
+fi

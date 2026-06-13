@@ -5,7 +5,7 @@ work_dir=$(pwd)
 source $work_dir/functions.sh
 source $work_dir/bin/ddevice/fetchINFO.sh
 
-if [[ $ROMVERSION == "V16.1.0" && $ANDROID_VER == "17" ]]; then
+if [[ $ROMVERSION == "16.0.7" && $ANDROID_VER == "16" ]]; then
 mods "Starting Apply ColorOS 16.1.0 Mods..."
 TARGET_DIR="$work_dir/bin/package/OS167"
 noexecute=("insmod")

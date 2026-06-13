@@ -49,7 +49,7 @@ fi
 
 
 echo "[MODS] - Replace SystemUI From Global To Domestic ROM"
-if [[ $ROMVERSION == "V16.1.0" && $ANDROID_VER == "16" && $region == "Domestic" ]]; then
+if [[ $ROMVERSION == "16.0.7" && $ANDROID_VER == "16" && $region == "Domestic" ]]; then
 SystemUI="$MAIN_FOLDER/system_ext/priv-app/SystemUI"
 Target="$work_dir/bin/package/UpdateFile/SystemUIPackage/1607"
 rm -rf $SystemUI/*

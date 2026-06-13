@@ -137,14 +137,9 @@ fi
 #No region check
 sed -i 's/^ro.vendor.oplus.radio.sar_regionmark=.*/ro.vendor.oplus.radio.sar_regionmark=/' $target
 
-else
-
-echo "[WARN] - No Support Domestic Region Patch!"
-
-fi 
-
 sed -i "s/persist.sys.oplus.anim_level=2/persist.sys.oplus.anim_level=1/g" $MAIN_FOLDER/my_product/build.prop
 
+echo "[MODS] - Disabling OTA Update..."
 #Modify Feature
 remove_feature oplus.software.startup_strategy_restrict
 remove_feature com.oplus.ota.component_update_url
@@ -159,7 +154,10 @@ remove_feature com.oplus.ota.questionnaire_support
 remove_feature com.android.launcher.DEFAULT_DRAWER_MODE
 remove_feature com.android.settings.screen_physics_size_cm
 remove_feature com.oplus.wallpapers.ai_camera_movement
-
-echo "[MODS] - Disabling OTA Update..."
-cp -rf $BLOB/feature_com.hma.otablock.xml $MY_STOCK/etc/extension
 echo "[MODS] - Done"
+
+else
+
+echo "[WARN] - No Support Domestic Region Patch!"
+
+fi 

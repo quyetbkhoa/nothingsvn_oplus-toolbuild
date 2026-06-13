@@ -6,7 +6,7 @@ APKEDITOR="java -jar $work_dir/bin/apktool/apke.jar"
 repS="python3 $work_dir/bin/strRep.py"
 region=$(cat $work_dir/bin/ddevice/rom_region.txt)
 brand_os=$(cat $work_dir/bin/ddevice/brand_os.txt)
-ModFile="$work_dir/bin/package/OS165/GlobalApplication"
+ModFile="$work_dir/bin/package/OS167/GlobalApplication"
 
 if [[ $region == "Domestic" ]]; then
 

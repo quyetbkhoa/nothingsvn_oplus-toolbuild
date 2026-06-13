@@ -6,11 +6,21 @@ on:
       input_url:
         description: 'URL of the ROM to build'
         required: true
+      builder_name:
+        description: 'Tên người build'
+        required: false
+      builder_id:
+        description: 'ID người build'
+        required: false
       
 jobs:
-  Initialize:
+  Build:
     runs-on: ubuntu-latest
+    env:
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
     steps:
+
       - name: Clean All Unused file,application
         run: |
           docker rmi `docker images -q` || true
@@ -28,24 +38,25 @@ jobs:
           remove-dotnet: 'true'
           remove-android: 'true'
           remove-haskell: 'true'
+          
+      - name: Checkout repository
+        uses: actions/checkout@main
+
+      - name: Start Notify
+        run: |
+          pip install requests
+          python notify.py start "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
 
       - name: Set up Time
         run: |
           echo "Setting Vienam timezone"
           sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 
-  Build:
-    needs: Initialize
-    runs-on: ubuntu-latest
-    steps:
       - name: Install OpenJDK
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
-
-      - name: Checkout repository
-        uses: actions/checkout@main
 
       - name: Install Stuff
         run: |
@@ -59,10 +70,11 @@ jobs:
         env:
           INPUT_URL: ${{ inputs.input_url }}
         run: |
-          sudo bash build.sh "$INPUT_URL"
+          sudo -E bash build.sh "$INPUT_URL" "n" "${{ github.repository }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
 
       - name: Pack ROM...
         run: |
+          python notify.py pack "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
           sudo bash packROM.sh n
 
       - name: Setup Rclone...
@@ -71,10 +83,15 @@ jobs:
           
       - name: Upload ROM...
         run: |
+          python notify.py upload "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
           sudo -E bash uploadROM.sh
       
-      - name: Update Database and Notificaton to Telegram
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TG_TOKEN }}
+      - name: Success Notification
+        if: success()
         run: |
-          
+          python notify.py success "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
+
+      - name: Failure Notification
+        if: failure()
+        run: |
+          python notify.py fail "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"

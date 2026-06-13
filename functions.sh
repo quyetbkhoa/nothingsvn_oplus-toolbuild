@@ -174,15 +174,15 @@ disable_avb_verify() {
     for fstab in $fstab_files; do
         if [[ -f $fstab ]]; then
             blue "Processing $fstab"
-		    sed -i "s/,avb_keys=.*avbpubkey//g" $fstab
-            sed -i "s/,avb=vbmeta_system//g" $fstab
-		    sed -i "s/,avb=vbmeta_vendor//g" $fstab
-            sed -i "s/,avb=vbmeta//g" $fstab
-            sed -i "s/,avb//g" $fstab
             sed -i 's/,avb.*system//g' $fstab
             sed -i 's/,avb,/,/g' $fstab
             sed -i 's/,avb=.*a,/,/g' $fstab
             sed -i 's/,avb_keys.*key//g' $fstab
+            sed -i "s/,avb_keys=.*avbpubkey//g" $fstab
+            sed -i "s/,avb=vbmeta_system//g" $fstab
+            sed -i "s/,avb=vbmeta_vendor//g" $fstab
+            sed -i "s/,avb=vbmeta//g" $fstab
+            sed -i "s/,avb//g" $fstab
         else
             echo "[INFO] - $fstab not found, please check it manually"
         fi
@@ -211,11 +211,6 @@ remove_data_encrypt() {
             echo "[INFO] - $fstab not found, please check it manually"
         fi
     done
-}
-
-closeAvb(){
-	echo "[SYSTEM] - Remove avb check：${1}"
-	sed -i 's/\x00\x00\x00\x00\x00\x61\x76\x62\x74\x6F\x6F\x6C\x20\x31\x2E\x31\x2E\x30/\x02\x00\x00\x00\x00\x61\x76\x62\x74\x6F\x6F\x6C\x20\x31\x2E\x31\x2E\x30/g' "${1}"
 }
 
 extract_partition() {
@@ -269,10 +264,6 @@ get_prop() {
 
     echo "$result"
 }
-
-#!/bin/bash
-# Function to delete files with Chinese characters in their filenames
-# ⚠️ WARNING: Permanently deletes files without confirmation!
 
 delete_chinese_files() {
     local ROOT_DIR="${1:-.}"
@@ -474,5 +465,90 @@ PATTERNS=(
 
 for pattern in "${PATTERNS[@]}"; do
     find "$TARGET_DIR" -type f -name "$pattern" -exec rm {} \;
+done
+}
+
+add_feature_v2() {
+    type=$1
+    shift 
+
+    case "$type" in
+        oplus_feature)
+            dir="build/portrom/images/my_product/etc/extension"
+            base_file="com.oplus.oplus-feature"
+            root_tag="oplus-config"
+            node_tag="oplus-feature"
+            attr_prefix='name='
+            ;;
+        app_feature)
+            dir="build/portrom/images/my_product/etc/extension"
+            base_file="com.oplus.app-features"
+            root_tag="extend_features"
+            node_tag="app_feature"
+            attr_prefix='name=' 
+            ;;
+        permission_feature)
+            dir="build/portrom/images/my_product/etc/permissions"
+            base_file="com.oplus.android-features"
+            root_tag="permissions"
+            node_tag="feature"
+            attr_prefix='name='
+            ;;
+        permission_oplus_feature)
+            dir="build/portrom/images/my_product/etc/permissions"
+            base_file="oplus.feature-android"
+            root_tag="oplus-config"
+            node_tag="oplus-feature"
+            attr_prefix='name='
+            ;;
+        *)
+            echo "Invalid type: $type"
+            return 1
+            ;;
+    esac
+
+    output_file="$dir/${base_file}-hma-ext.xml"
+    mkdir -p "$dir"
+
+    if [[ ! -f "$output_file" ]]; then
+        echo "New file: $output_file"
+        cat > "$output_file" <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<$root_tag>
+</$root_tag>
+EOF
+    fi
+
+    for entry in "$@"; do
+    IFS='^' read -r feature comment extra <<< "$entry"
+    
+    [[ "$feature" == "$comment" ]] && comment=""
+    
+    [[ -z "$extra" ]] && extra=""
+
+found=0
+for xml in $(find build/baserom/images/my_product/etc/ -type f -name "*.xml"); do
+	if grep -n "$feature" "$xml" | grep -vq "<!--"; then
+           blue "Feature $feature already exists, skipping..."
+           found=1
+           break
+    fi
+done
+
+    if [[ $found == 0 ]]; then
+        blue "Feature $feature Added."
+
+        if [[ "$type" == "app_feature" ]]; then
+            attrs="name=\"$feature\""
+            [[ -n "$extra" ]] && attrs="$attrs $extra"
+        else
+            attrs="name=\"$feature\""
+            [[ -n "$extra" ]] && attrs="$attrs $extra"
+        fi
+        if [[ -n "$comment" ]]; then
+            sed -i "/<\/$root_tag>/i\\\    <!-- $comment -->" "$output_file"
+        fi
+        sed -i "/<\/$root_tag>/i\\\    <$node_tag $attrs\/>" "$output_file"
+    fi
 done
 }

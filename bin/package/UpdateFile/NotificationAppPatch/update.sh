@@ -129,7 +129,7 @@ fi
 app_need_fix=("com.google.android.gm" "com.microsoft.office.outlook" "vnpay.smartacccount" "com.sacombank.ewallet" "com.vnpay.Agribank3g" "com.vietinbank.ipay" "com.bplus.vtpay"
 "com.mbmobile" "com.vnpay.bidv" "com.beeasy.toppay" "vn.com.vng.zalopay" "com.tpb.mb.gprsandroid" "vn.com.msb.smartBanking" "xyz.be.cake" "com.ncb.bank" "com.vnpay.vpbankonline"
 "io.lifestyle.plus" "com.ocb.liobank" "vn.com.techcombank.bb.app" "com.vib.myvib2" "tw.nekomimi.nekogram" "com.VCB" "com.mservice.momotransfer")
-if [[ $BASE_REGION = "Domestic" ]];then
+if [[ $region = "Domestic" ]];then
     echo "[PATCH] - Device region is DOMESTIC ==> Patching Notification"
     for app in "${app_need_fix[@]}"; do
         fix_noti_safe_boot_wl "$app" "$IS_SAFEBOOT_WHITELIST"

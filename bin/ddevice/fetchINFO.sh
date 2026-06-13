@@ -122,6 +122,7 @@ fi
 echo "$ANDROID_VER" > $work_dir/bin/ddevice/androidver.txt
 echo "$SDK_LEVEL" > $work_dir/bin/ddevice/sdkLevel.txt
 echo "$DEVICE_MODEL" > $work_dir/bin/ddevice/device_model.txt
+echo "$CODENAME" > $work_dir/bin/ddevice/device_code.txt
 echo "$MYNAME" > $work_dir/bin/ddevice/device_name.txt
 echo "$ID" > $work_dir/bin/ddevice/id.txt
 sed -E 's/^.*_([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)\(.*$/\1/' $work_dir/bin/ddevice/id.txt > $BUILD_ID

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<permissions>
+	<feature name="com.oplus.software.scene_mode_google_play_13.1"/>
+	<feature name="com.oplus.software.brickmode_oppo_export"/>
+	<feature name="com.oplus.software.viewtalk_google_play"/>
+	<feature name="com.oplus.software.screenrecorder_google_play"/>
+	<feature name="oplus.software.support_gp.brand_oneplus"/>
+	<feature name="oplus.software.support_gp.region_export"/>
+	<feature name="oplus.software.support_gp.type_phone"/>
+	<feature name="oplus.software.support_gp.product_full"/>
+	<feature name="com.oplus.software.children_space_google_play_exp"/>
+	<feature name="com.oplus.software.children_space_google_play_gdpr"/>
+	<feature name="oplus.software.gallery.olive"/>
+	<feature name="android.hardware.biometrics.face"/>
+	<feature name="android.software.credentials"/>
+	<feature name="oplus.software.support_gp.op_weather"/>
+</permissions>
+<!-- Timestamp 2025-01-09T16:36:08 #524132 -->
