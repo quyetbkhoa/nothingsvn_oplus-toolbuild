@@ -66,7 +66,7 @@ Không tự chạy script trong ROM và không tự flash điện thoại.
 
 Chạy `python Check-Candidate.py` trong folder output trước khi dùng. Checker
 đối chiếu IMG và metadata với manifest đã đóng băng; PASS là kiểm tra offline.
-Đọc `DEVICE-CHECKLIST.md`, tự cài bằng flasher đi kèm và báo candidate ID cùng
+Đọc `USER-TEST-CHECKLIST.md`, tự cài bằng flasher đi kèm và báo candidate ID cùng
 log nếu lỗi. Giữ bản stock hoạt động tốt để phục hồi. Tool không tự flash/wipe.
 
 Flasher có lựa chọn giữ/wipe data lúc vào, log màu, OKAY thẳng hàng, lỗi đỏ,
