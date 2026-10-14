@@ -1,0 +1,463 @@
+{
+  "schema": 1,
+  "id": "pjf110-cph2745-oos16-20261009",
+  "status": "sample-verified",
+  "requires_donor": true,
+  "target": {
+    "model": "PJF110",
+    "device": "OP5CFBL1",
+    "name": "OnePlus Ace 3V",
+    "android": "16",
+    "base_version": "ColorOS 16.0.5.1001"
+  },
+  "donor": {
+    "model": "CPH2745",
+    "device": "OP611FL1",
+    "name": "OnePlus 15",
+    "android": "16",
+    "region": "IN",
+    "version": "OxygenOS 16.0.10.601"
+  },
+  "source_run": "https://github.com/tiencv2006/NothingsVN-BuildExt/actions/runs/37942205546",
+  "source_toolbuild_commit": "0dba87b029f262b86e2f7ecd74e12352d0c7f845",
+  "variant": {
+    "install_mods": true,
+    "install_toolbox": true
+  },
+  "mods_complete": true,
+  "toolbox_complete": true,
+  "blockers": [],
+  "partitions": [
+    {
+      "name": "abl",
+      "kind": "copy",
+      "output": "firmware-update/abl.img"
+    },
+    {
+      "name": "aop",
+      "kind": "copy",
+      "output": "firmware-update/aop.img"
+    },
+    {
+      "name": "aop_config",
+      "kind": "copy",
+      "output": "firmware-update/aop_config.img"
+    },
+    {
+      "name": "bluetooth",
+      "kind": "copy",
+      "output": "firmware-update/bluetooth.img"
+    },
+    {
+      "name": "boot",
+      "kind": "copy",
+      "output": "firmware-update/boot.img"
+    },
+    {
+      "name": "cpucp",
+      "kind": "copy",
+      "output": "firmware-update/cpucp.img"
+    },
+    {
+      "name": "cpucp_dtb",
+      "kind": "copy",
+      "output": "firmware-update/cpucp_dtb.img"
+    },
+    {
+      "name": "devcfg",
+      "kind": "copy",
+      "output": "firmware-update/devcfg.img"
+    },
+    {
+      "name": "dsp",
+      "kind": "copy",
+      "output": "firmware-update/dsp.img"
+    },
+    {
+      "name": "dtbo",
+      "kind": "copy",
+      "output": "firmware-update/dtbo.img"
+    },
+    {
+      "name": "featenabler",
+      "kind": "copy",
+      "output": "firmware-update/featenabler.img"
+    },
+    {
+      "name": "hyp",
+      "kind": "copy",
+      "output": "firmware-update/hyp.img"
+    },
+    {
+      "name": "imagefv",
+      "kind": "copy",
+      "output": "firmware-update/imagefv.img"
+    },
+    {
+      "name": "init_boot",
+      "kind": "copy",
+      "output": "firmware-update/init_boot.img"
+    },
+    {
+      "name": "keymaster",
+      "kind": "copy",
+      "output": "firmware-update/keymaster.img"
+    },
+    {
+      "name": "modem",
+      "kind": "copy",
+      "output": "images/modem.img"
+    },
+    {
+      "name": "my_bigball",
+      "kind": "repack-erofs",
+      "output": "system/my_bigball.img"
+    },
+    {
+      "name": "my_carrier",
+      "kind": "repack-erofs",
+      "output": "system/my_carrier.img"
+    },
+    {
+      "name": "my_company",
+      "kind": "repack-erofs",
+      "output": "system/my_company.img"
+    },
+    {
+      "name": "my_engineering",
+      "kind": "repack-erofs",
+      "output": "system/my_engineering.img"
+    },
+    {
+      "name": "my_heytap",
+      "kind": "repack-erofs",
+      "output": "system/my_heytap.img"
+    },
+    {
+      "name": "my_manifest",
+      "kind": "repack-erofs",
+      "output": "system/my_manifest.img"
+    },
+    {
+      "name": "my_preload",
+      "kind": "asset",
+      "output": "system/my_preload.img"
+    },
+    {
+      "name": "my_product",
+      "kind": "repack-erofs",
+      "output": "system/my_product.img"
+    },
+    {
+      "name": "my_region",
+      "kind": "repack-erofs",
+      "output": "system/my_region.img"
+    },
+    {
+      "name": "my_stock",
+      "kind": "repack-erofs",
+      "output": "system/my_stock.img"
+    },
+    {
+      "name": "odm",
+      "kind": "repack-erofs",
+      "output": "system/odm.img"
+    },
+    {
+      "name": "oplus_sec",
+      "kind": "copy",
+      "output": "firmware-update/oplus_sec.img"
+    },
+    {
+      "name": "oplusstanvbk",
+      "kind": "copy",
+      "output": "firmware-update/oplusstanvbk.img"
+    },
+    {
+      "name": "product",
+      "kind": "repack-erofs",
+      "output": "system/product.img"
+    },
+    {
+      "name": "qupfw",
+      "kind": "copy",
+      "output": "firmware-update/qupfw.img"
+    },
+    {
+      "name": "shrm",
+      "kind": "copy",
+      "output": "firmware-update/shrm.img"
+    },
+    {
+      "name": "splash",
+      "kind": "asset",
+      "output": "firmware-update/splash.img"
+    },
+    {
+      "name": "system",
+      "kind": "repack-erofs",
+      "output": "system/system.img"
+    },
+    {
+      "name": "system_dlkm",
+      "kind": "copy",
+      "output": "system/system_dlkm.img"
+    },
+    {
+      "name": "system_ext",
+      "kind": "repack-erofs",
+      "output": "system/system_ext.img"
+    },
+    {
+      "name": "tz",
+      "kind": "copy",
+      "output": "firmware-update/tz.img"
+    },
+    {
+      "name": "uefi",
+      "kind": "copy",
+      "output": "firmware-update/uefi.img"
+    },
+    {
+      "name": "uefisecapp",
+      "kind": "copy",
+      "output": "firmware-update/uefisecapp.img"
+    },
+    {
+      "name": "vbmeta",
+      "kind": "vbmeta-flags",
+      "output": "firmware-update/vbmeta.img"
+    },
+    {
+      "name": "vbmeta_system",
+      "kind": "vbmeta-flags",
+      "output": "firmware-update/vbmeta_system.img"
+    },
+    {
+      "name": "vbmeta_vendor",
+      "kind": "vbmeta-flags",
+      "output": "firmware-update/vbmeta_vendor.img"
+    },
+    {
+      "name": "vendor",
+      "kind": "repack-erofs",
+      "output": "system/vendor.img"
+    },
+    {
+      "name": "vendor_boot",
+      "kind": "copy",
+      "output": "firmware-update/vendor_boot.img"
+    },
+    {
+      "name": "vendor_dlkm",
+      "kind": "copy",
+      "output": "system/vendor_dlkm.img"
+    },
+    {
+      "name": "xbl",
+      "kind": "copy",
+      "output": "firmware-update/xbl.img"
+    },
+    {
+      "name": "xbl_config",
+      "kind": "copy",
+      "output": "firmware-update/xbl_config.img"
+    },
+    {
+      "name": "xbl_ramdump",
+      "kind": "copy",
+      "output": "firmware-update/xbl_ramdump.img"
+    }
+  ],
+  "features": [
+    {
+      "id": "payload-extraction",
+      "evidence": "observed",
+      "implementation": "implemented; donor ZIP extraction not yet exercised"
+    },
+    {
+      "id": "base-only",
+      "evidence": "workflow input",
+      "implementation": "pending"
+    },
+    {
+      "id": "port-b-to-a",
+      "evidence": "observed",
+      "implementation": "sample source map replay passed; reusable hardware selection rules pending"
+    },
+    {
+      "id": "preserve-dlkm",
+      "evidence": "observed",
+      "implementation": "system_dlkm/vendor_dlkm raw images byte-identical to A and reference output"
+    },
+    {
+      "id": "sync-missing-audio-theme",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "target-identity-props",
+      "evidence": "observed",
+      "implementation": "Sample assets verified; reusable property engine/policy covers 25 my_manifest keys, 9 my_product keys and 1 ODM key on saved text evidence. Live PC input folders and remaining transformations pending."
+    },
+    {
+      "id": "debloat",
+      "evidence": "35 removed directories in sample run",
+      "implementation": "recorded; default/flag behavior pending"
+    },
+    {
+      "id": "installerx",
+      "evidence": "observed for non-domestic ROM",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "settings-ota-card-branding",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "ntmanager",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "boot-reboot-shutdown-animation",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "adaptive-splash",
+      "evidence": "1240x2772 observed",
+      "implementation": "output image available; generator pending"
+    },
+    {
+      "id": "oos-dialer-in",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "ota-block",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "opaxg-audio",
+      "evidence": "90 profiles observed",
+      "implementation": "pending diff"
+    },
+    {
+      "id": "systemui-features-music",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "launcher16",
+      "evidence": "16.6.20 replacement observed",
+      "implementation": "output asset available; recipe pending"
+    },
+    {
+      "id": "unlimited-floating-windows",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "framework-hooks",
+      "evidence": "59 framework, 13 services method patches; pinned NexAlloy payload",
+      "implementation": "prepatched framework/services JARs reproduced byte-exact for sample; generic method patch engine pending"
+    },
+    {
+      "id": "signature-permissions",
+      "evidence": "observed",
+      "implementation": "recovered sample assets/source map; full filesystem round-trip passed; generic transformation pending"
+    },
+    {
+      "id": "toolbox",
+      "evidence": "INSTALL_TOOLBOX=true; older reference",
+      "implementation": "current integration pending verification"
+    },
+    {
+      "id": "ntmanager-selinux",
+      "evidence": "priv_app to update_engine rules observed",
+      "implementation": "pending policy diff"
+    },
+    {
+      "id": "ota-certificates",
+      "evidence": "certificate embedded; RSA-2048 observed",
+      "implementation": "public cert extraction available; signing keys absent"
+    },
+    {
+      "id": "erofs-ext4",
+      "evidence": "sample EROFS; older reference supports EXT",
+      "implementation": "EROFS extract/repack implemented; EXT4 repack pending"
+    },
+    {
+      "id": "fastboot-package",
+      "evidence": "sample run successful",
+      "implementation": "48-image sample built; filesystem metadata round-trip and real 49-entry ZIP CRC passed"
+    },
+    {
+      "id": "ota-both",
+      "evidence": "workflow inputs; sample did not build OTA",
+      "implementation": "pending"
+    },
+    {
+      "id": "upload-notify-api",
+      "evidence": "workflow steps",
+      "implementation": "pending contracts; no messages sent"
+    },
+    {
+      "id": "domestic-notification-ai",
+      "evidence": "skipped in sample; older reference only",
+      "implementation": "unknown current behavior"
+    },
+    {
+      "id": "android17-launcher",
+      "evidence": "A17-only 17.3.12 skipped in sample",
+      "implementation": "unknown current behavior"
+    },
+    {
+      "id": "assistant-gestures-cn",
+      "evidence": "CN 16.0.9/16.0.10 branch skipped in sample",
+      "implementation": "unknown current behavior"
+    }
+  ],
+  "reconstruction": {
+    "recipe": "recipes/pjf110-cph2745-oos16.json",
+    "assets": "assets/local/pjf110-cph2745",
+    "status": "sample content and Android metadata verified",
+    "verified_variant": {
+      "install_mods": true,
+      "install_toolbox": true
+    },
+    "verification": "evidence/reconstruction-verification.json",
+    "native_platform": "windows-x86_64",
+    "package_report": "evidence/reconstruction-package.json"
+  },
+  "partition_evidence": "evidence/three-way-images.json",
+  "filesystem_evidence": "evidence/three-way-files.json",
+  "unverified_scope": [
+    "Other input versions and models",
+    "mods/toolbox disabled variants",
+    "base-only, OTA/both",
+    "Full hardware/runtime behavior and successful my_company repair flash"
+  ],
+  "verification_scope": "Exact supplied versions, mods=true, toolbox=true, fastboot; filesystem/metadata equivalence only",
+  "device_observations": {
+    "android_boot": "user-reported",
+    "flash": "partial: my_company write failed",
+    "full_device_validation": false,
+    "evidence": "evidence/first-flash-diagnosis.json",
+    "repair_device_tested": false
+  },
+  "generic_modules": [
+    {
+      "id": "core-properties",
+      "policy": "recipes/oplus-a16-in-core-properties.json",
+      "status": "offline-text-verified",
+      "evidence": "evidence/pc-property-evidence.json",
+      "scope": "OnePlus Android 16 IN input conditions; parameterized model/device/hardware property values; not full port compatibility",
+      "pipeline_integrated": false,
+      "live_pc_inputs_validated": false
+    }
+  ]
+}

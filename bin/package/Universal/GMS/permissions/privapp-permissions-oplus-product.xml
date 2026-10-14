@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<permissions>
-	<privapp-permissions package="com.oplus.remotecontrol">
-		<permission name="android.permission.START_ACTIVITIES_FROM_BACKGROUND"/>
-	</privapp-permissions>
-</permissions>
-<!-- Timestamp 2025-04-11T11:18:17 #661485 -->

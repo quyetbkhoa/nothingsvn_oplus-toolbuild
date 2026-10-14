@@ -1,0 +1,351 @@
+{
+  "schema": 1,
+  "kind": "port-properties",
+  "id": "oplus-a16-in-core-properties-v1",
+  "scope": "Reusable key operations; observed OnePlus Android 16 IN contract only, not a complete port",
+  "evidence": [
+    "reports/PATCH-DETAILS.json",
+    "reports/OPLUS-PORT-ANALYSIS.md section 5.2"
+  ],
+  "conditions": [
+    {
+      "source": {
+        "role": "base",
+        "path": "system/system/build.prop",
+        "key": "ro.build.version.release"
+      },
+      "equals": "16"
+    },
+    {
+      "source": {
+        "role": "donor",
+        "path": "system/system/build.prop",
+        "key": "ro.build.version.release"
+      },
+      "equals": "16"
+    },
+    {
+      "source": {
+        "role": "base",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.manufacturer"
+      },
+      "equals": "OnePlus"
+    },
+    {
+      "source": {
+        "role": "donor",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.manufacturer"
+      },
+      "equals": "OnePlus"
+    },
+    {
+      "source": {
+        "role": "donor",
+        "path": "my_manifest/build.prop",
+        "key": "ro.oplus.pipeline_key"
+      },
+      "equals": "IN"
+    }
+  ],
+  "identity": {
+    "base": {
+      "model": {
+        "role": "base",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.model"
+      },
+      "device": {
+        "role": "base",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.device"
+      }
+    },
+    "donor": {
+      "model": {
+        "role": "donor",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.model"
+      },
+      "device": {
+        "role": "donor",
+        "path": "my_manifest/build.prop",
+        "key": "ro.product.device"
+      }
+    },
+    "product_suffixes": [
+      "IN"
+    ]
+  },
+  "files": [
+    {
+      "path": "my_manifest/build.prop",
+      "baseline": "donor",
+      "operations": [
+        {
+          "kind": "identity",
+          "key": "ro.product.model",
+          "form": "model",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.device",
+          "form": "device",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.name",
+          "form": "product-name",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.vendor.model",
+          "form": "model",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.vendor.device",
+          "form": "device",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.vendor.name",
+          "form": "product-name",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.odm.model",
+          "form": "model",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.odm.device",
+          "form": "device",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.odm.name",
+          "form": "product-name",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.bootimage.model",
+          "form": "model",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.bootimage.device",
+          "form": "device",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.product.bootimage.name",
+          "form": "product-name",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.fingerprint",
+          "form": "fingerprint",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.vendor.build.fingerprint",
+          "form": "fingerprint",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.odm.build.fingerprint",
+          "form": "fingerprint",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.bootimage.build.fingerprint",
+          "form": "fingerprint",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.product",
+          "form": "product-name",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.display.id",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.display.id.show",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.display.full_id",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.display.ota",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.version.ota",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.oplus.image.my_manifest.version",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.oplus.version.my_manifest",
+          "form": "model-prefix",
+          "occurrences": 1
+        },
+        {
+          "kind": "copy",
+          "key": "ro.vendor.oplus.market.name",
+          "source": {
+            "role": "base",
+            "path": "my_manifest/build.prop",
+            "key": "ro.vendor.oplus.market.enname"
+          },
+          "occurrences": 2
+        }
+      ]
+    },
+    {
+      "path": "my_product/build.prop",
+      "baseline": "donor",
+      "operations": [
+        {
+          "kind": "copy",
+          "key": "persist.oplus.software.alertslider.location",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "persist.oplus.software.alertslider.location"
+          },
+          "occurrences": 0
+        },
+        {
+          "kind": "copy",
+          "key": "ro.oplus.display.wm_size_resolution_switch.support",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.oplus.display.wm_size_resolution_switch.support"
+          },
+          "occurrences": 0
+        },
+        {
+          "kind": "copy",
+          "key": "ro.vendor.display.sensortype",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.vendor.display.sensortype"
+          },
+          "occurrences": 0
+        },
+        {
+          "kind": "copy",
+          "key": "vendor.display.use_layer_ext",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "vendor.display.use_layer_ext"
+          },
+          "occurrences": 0
+        },
+        {
+          "kind": "copy",
+          "key": "ro.oplus.display.screenhole.positon",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.oplus.display.screenhole.positon"
+          },
+          "occurrences": 1
+        },
+        {
+          "kind": "copy",
+          "key": "ro.oplus.lcd.display.screen.underlightsensor.region",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.oplus.lcd.display.screen.underlightsensor.region"
+          },
+          "occurrences": 1
+        },
+        {
+          "kind": "copy",
+          "key": "ro.oplus.resolution.high",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.oplus.resolution.high"
+          },
+          "occurrences": 1
+        },
+        {
+          "kind": "copy",
+          "key": "ro.oplus.resolution.low",
+          "source": {
+            "role": "base",
+            "path": "my_product/build.prop",
+            "key": "ro.oplus.resolution.low"
+          },
+          "occurrences": 1
+        },
+        {
+          "kind": "identity",
+          "key": "ro.build.display.ota",
+          "form": "model-prefix",
+          "occurrences": 1
+        }
+      ]
+    },
+    {
+      "path": "odm/build.prop",
+      "baseline": "base",
+      "operations": [
+        {
+          "kind": "copy",
+          "key": "ro.vendor.oplus.market.name",
+          "source": {
+            "role": "base",
+            "path": "my_manifest/build.prop",
+            "key": "ro.vendor.oplus.market.enname"
+          },
+          "occurrences": 1
+        }
+      ]
+    }
+  ]
+}

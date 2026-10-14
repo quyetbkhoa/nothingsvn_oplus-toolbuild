@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<config>
-    <!-- Google Play Protect Service https://docs.partner.android.com/gms/building/apps/productivity/app-protection?hl=en&authuser=1 -->
-    <feature name="com.google.android.feature.GPP_SERVICE_COMPATIBLE" />
-
-    <allow-association target="com.google.android.as.oss" allowed="com.google.android.odad" />
-    <allow-association target="com.google.android.odad" allowed="com.google.android.as.oss" />
-    <allow-association target="com.google.android.odad" allowed="com.android.providers.telephony" />
-</config>

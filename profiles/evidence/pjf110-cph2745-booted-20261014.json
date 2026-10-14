@@ -1,0 +1,137 @@
+{
+  "schema": 1,
+  "candidate_id": "PJF110-CPH2745-minimal-port-20261014-000001",
+  "manifest_sha256": "5540d3e526fc303ba648763d4216b24996b691f64e5728b300a07354962b3e3e",
+  "identities": {
+    "base": {
+      "product_name": "PJF110",
+      "version_name": "PJF110_16.0.5.1001(CN01)",
+      "android_version": "16"
+    },
+    "donor": {
+      "product_name": "CPH2745IN",
+      "version_name": "CPH2745_16.0.10.601(EX01)",
+      "android_version": "16"
+    }
+  },
+  "selinux": {
+    "status": "HOST-COMPILE-PASS",
+    "inputs_match_exactly": true,
+    "inputs": [
+      {
+        "path": "system/system/etc/selinux/plat_sepolicy.cil",
+        "sha256": "8c2a6cb31d87d70efb3f98760704d8d3f17da32ce75704db27185f314044ac22"
+      },
+      {
+        "path": "system/system/etc/selinux/mapping/34.0.cil",
+        "sha256": "d094569b0fc72c578cb5c2422ec426b6d7d54af5ae02a33d846fd4082f1e08bb"
+      },
+      {
+        "path": "system/system/etc/selinux/mapping/34.0.compat.cil",
+        "sha256": "869e218c107cd6a5e2acb3f8e1f608f9089574889689c7b50cf99c07f33a0e3a"
+      },
+      {
+        "path": "system_ext/etc/selinux/system_ext_sepolicy.cil",
+        "sha256": "9ec835c2e1c2c1018c0763c488bc15f3479fdacdc7b39b302569275af9ef5f36"
+      },
+      {
+        "path": "system_ext/etc/selinux/mapping/34.0.cil",
+        "sha256": "adff0fd75d0d919177879cbe222d062c40e472667a0541d4910520735a3a2ef3"
+      },
+      {
+        "path": "system_ext/etc/selinux/mapping/34.0.compat.cil",
+        "sha256": "e6a0525efae6faaa1c72f26d8eec4129c680d12d13c9aa7dcee6850b4dff1f1b"
+      },
+      {
+        "path": "product/etc/selinux/product_sepolicy.cil",
+        "sha256": "3d583da2ec06e88f2ac13c5c678a4177bf7f26f182ecb04bb45fa5af9ee09c1a"
+      },
+      {
+        "path": "product/etc/selinux/mapping/34.0.cil",
+        "sha256": "7b17ea0b0e4e9191fbfae80a0d5769aed8d160d34cef7df5dddb0db421ae26ca"
+      },
+      {
+        "path": "vendor/etc/selinux/plat_pub_versioned.cil",
+        "sha256": "0beb3757840658c7f2dc0682ea58c09541e7a528eb181984bff35d0f7c9d6964"
+      },
+      {
+        "path": "vendor/etc/selinux/vendor_sepolicy.cil",
+        "sha256": "044e172f83903b2a6bab5d4fdfe387c73799a178e3f36ba6aee4973ec100fec6"
+      }
+    ],
+    "compiled_policy_sha256": "ff65daced3d1e7267a97317bfd1ff733773d154eb4b5cbc6cba7d4c41d3e2629",
+    "policy_version": 33,
+    "compiler_sha256": "ae83114646bd22993a2f8856062a7bd168853897af02337bde386fb79d938e5b",
+    "compile_rerun": true,
+    "scope": "Pinned upstream3.10 host CIL compilation at observed kernel maximum33. No policy installed on the phone or injected into image, no OEM secilc/kernel load/runtime permission proof.",
+    "libsepol_sha256": "52f9f0665b6e98f7dcd6e52d87506bffa33a1dcc0797f24db994ca2587ee87f7",
+    "kernel_reported_max_policy_version": 33
+  },
+  "apk_checks": [
+    {
+      "path": "my_product/etc/aisubsystem/Plugin/plugin-cloud_entity_extraction-187699205-1008-pall-domestic.apk",
+      "sha256": "7be199103d377264ef1e2212f8ec1fb25f673431c65d7aec113ef4eb92fc9144",
+      "signature_verified": false,
+      "signer_sha256": [],
+      "errors": [
+        "Missing META-INF/MANIFEST.MF"
+      ],
+      "min_sdk_version": 36,
+      "max_sdk_version": 36
+    },
+    {
+      "path": "my_product/overlay/android_framework_res_overlay.display.product.23803.apk",
+      "sha256": "72a2585478b59272a9869917b8cc1f71fa09db5be789f3e3eb56058b5a79ff89",
+      "signature_verified": true,
+      "signer_sha256": [
+        "fc98dae63ad39626c8c67fbe83f2f06f74932a9cd146b92cecfc6a047a904386"
+      ],
+      "errors": [],
+      "min_sdk_version": 36,
+      "max_sdk_version": 36
+    },
+    {
+      "path": "my_product/overlay/com.android.SystemUIResOverlay.23803.apk",
+      "sha256": "ce79f9fde86017c905fa642bd671d54eb0b0db9b611c83defd255dcd0f20e8de",
+      "signature_verified": true,
+      "signer_sha256": [
+        "fc98dae63ad39626c8c67fbe83f2f06f74932a9cd146b92cecfc6a047a904386"
+      ],
+      "errors": [],
+      "min_sdk_version": 36,
+      "max_sdk_version": 36
+    },
+    {
+      "path": "my_product/overlay/framework_res_overlay.network.23803.apk",
+      "sha256": "9488d4e9abb6d9a00ad29148b1a51bdf2008933be2c26709c36103e8c44922a3",
+      "signature_verified": true,
+      "signer_sha256": [
+        "fc98dae63ad39626c8c67fbe83f2f06f74932a9cd146b92cecfc6a047a904386"
+      ],
+      "errors": [],
+      "min_sdk_version": 36,
+      "max_sdk_version": 36
+    },
+    {
+      "path": "system/system/framework/framework-res.apk",
+      "sha256": "4d9bb81e85fa4acbb42e1aa145d4a9246172cdee94c18a48d82069c48e33642f",
+      "signature_verified": true,
+      "signer_sha256": [
+        "fc98dae63ad39626c8c67fbe83f2f06f74932a9cd146b92cecfc6a047a904386"
+      ],
+      "errors": [],
+      "min_sdk_version": 36,
+      "max_sdk_version": 36
+    }
+  ],
+  "apk_verifier": {
+    "coordinate": "com.android.tools.build:apksig:9.4.1",
+    "url": "https://dl.google.com/dl/android/maven2/com/android/tools/build/apksig/9.4.1/apksig-9.4.1.jar",
+    "jar_sha256": "7ae2e5980c77d853e3513074ee7c822bbdcdcde1668889d17faa7fe8bc8aa821",
+    "helper_source_sha256": "fda93db0f94fa9cf9b1c7b633bcc3f8c2e58be1160c4d85df651bba5903e6792",
+    "helper_class_sha256": "79454638a44592be49664c7fcf37f782e8049661380ab615d16286879252ec1c",
+    "java": "W:\\FastbootFirmwareFlasher\\ExtraTools\\jre\\bin\\java.exe",
+    "javac": "C:\\Program Files\\Android\\Android Studio\\jbr\\bin\\javac.exe"
+  },
+  "scope": "Exact input byte-qualified prior offline evidence; boot confirmation stays separate, no hardware or new-output acceptance"
+}

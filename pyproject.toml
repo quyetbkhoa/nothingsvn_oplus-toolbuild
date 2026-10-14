@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "colornt-toolbuild"
+version = "0.5.0rc3"
+description = "Evidence-driven Oplus ROM reconstruction and build toolkit"
+requires-python = ">=3.11"
+
+[project.scripts]
+colornt = "colornt.cli:main"
+colornt-gui = "colornt.desktop:main"
+
+[tool.setuptools]
+packages = ["colornt"]

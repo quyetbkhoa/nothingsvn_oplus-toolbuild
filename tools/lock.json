@@ -1,0 +1,142 @@
+{
+  "erofs-windows": {
+    "platform": "windows-x86_64",
+    "directory": "erofs-tools",
+    "version": "v1.8.10-gee46dd74-251217",
+    "url": "https://github.com/sekaiacg/erofs-tools/releases/download/v1.8.10-251217/erofs-utils-v1.8.10-gee46dd74-251217-Cygwin_x86_64.zip",
+    "sha256": "b6a24de0cfe49a95283cf306db1d158bdb63850e0687c8a8b0f4c4a540ba35ba",
+    "source": "https://github.com/sekaiacg/erofs-tools",
+    "archive_suffix": ".zip"
+  },
+  "payload-windows": {
+    "platform": "windows-x86_64",
+    "directory": "payload",
+    "version": "2.1.0",
+    "url": "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_windows_amd64.tar.gz",
+    "sha256": "45483c54bdd9219b8dcdb757256e7ce7a2bf9552d0e43f32e03389a1f0c55b15",
+    "source": "https://github.com/ssut/payload-dumper-go",
+    "archive_suffix": ".tar.gz"
+  },
+  "erofs-linux": {
+    "platform": "linux-x86_64",
+    "directory": "erofs-tools",
+    "version": "v1.8.10-gee46dd74-251217",
+    "url": "https://github.com/sekaiacg/erofs-tools/releases/download/v1.8.10-251217/erofs-utils-v1.8.10-gee46dd74-251217-Linux_x86_64.zip",
+    "sha256": "6d6c6b0e7ad7273cc019644e5d6ad1e263142fad72874e169cc0731854f95bf1",
+    "source": "https://github.com/sekaiacg/erofs-tools",
+    "archive_suffix": ".zip"
+  },
+  "payload-linux": {
+    "platform": "linux-x86_64",
+    "directory": "payload",
+    "version": "2.1.0",
+    "url": "https://github.com/ssut/payload-dumper-go/releases/download/2.1.0/payload-dumper-go_2.1.0_linux_amd64.tar.gz",
+    "sha256": "bbbb53a71955c69272afdef7bc7e83a1bb1770f453d0c21dcaf61a3ba0463c11",
+    "source": "https://github.com/ssut/payload-dumper-go",
+    "archive_suffix": ".tar.gz"
+  },
+  "avbtool-python": {
+    "platform": "python3",
+    "directory": "avb",
+    "version": "761178607206f4cb2af79ed9eec52d8cbd814adb",
+    "url": "https://android.googlesource.com/platform/external/avb/+/761178607206f4cb2af79ed9eec52d8cbd814adb/avbtool.py?format=TEXT",
+    "encoding": "gitiles-base64",
+    "sha256": "e5a664a38db623da00f080219bc0ee60a640a9dc4a872803616fae4938ac749b",
+    "source": "https://android.googlesource.com/platform/external/avb/",
+    "archive_suffix": ".py",
+    "filename": "avbtool.py"
+  },
+  "platform-tools-windows-audit": {
+    "platform": "windows-x86_64",
+    "directory": "platform-tools-official",
+    "version": "37.0.1",
+    "url": "https://dl.google.com/android/repository/platform-tools-latest-windows.zip",
+    "sha256": "45f4d63113e895ebde0c90f194099a4676b6ac653bd28d54314a9e022bbc1a99",
+    "archive_suffix": ".zip",
+    "source": "https://developer.android.com/tools/releases/platform-tools",
+    "note": "Downloaded for byte comparison only. Mutable latest URL with pinned archive hash; archive retained locally. BAT still uses identical FFF copy."
+  },
+  "policy-alpine-rootfs": {
+    "platform": "linux-x86_64",
+    "directory": "policy-runtime",
+    "version": "3.24.2",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/releases/x86_64/alpine-minirootfs-3.24.2-x86_64.tar.gz",
+    "sha256": "c5ca053cfe1d85c5b96dff8b9bc57045f7f184a30ffb6b65776409ca90388677",
+    "source": "https://alpinelinux.org/downloads/",
+    "archive_suffix": ".tar.gz",
+    "scope": "Dedicated optional WSL policy compiler on H, not app image extraction"
+  },
+  "secilc-source": {
+    "platform": "linux-x86_64",
+    "directory": "policy-runtime",
+    "version": "3.10",
+    "revision": "ca10fc4204ed60540d41d2499127c18ad0643f9e",
+    "url": "https://raw.githubusercontent.com/SELinuxProject/selinux/ca10fc4204ed60540d41d2499127c18ad0643f9e/secilc/secilc.c",
+    "sha256": "7ad740952b901b69df114473d2415eae6aef04c963fbb27ea6dfd6ca75cd144a",
+    "source": "https://github.com/SELinuxProject/selinux",
+    "scope": "Build against pinned Alpine libsepol3.10-r0; retains BSD license header"
+  },
+  "policy-alpine-libsepol": {
+    "platform": "linux-x86_64",
+    "version": "3.10-r0",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/community/x86_64/libsepol-3.10-r0.apk",
+    "sha256": "f85b3a9dc7c8c58946e0a85b66665e056813c4ca482edafc055013f537876839",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-alpine-libsepol-dev": {
+    "platform": "linux-x86_64",
+    "version": "3.10-r0",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/community/x86_64/libsepol-dev-3.10-r0.apk",
+    "sha256": "d11eb42dffc20abb216ebe3ae30c9abb5899073a197bd050ead35446ef53aa37",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-alpine-gcc": {
+    "platform": "linux-x86_64",
+    "version": "15.2.0-r5",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/gcc-15.2.0-r5.apk",
+    "sha256": "d1d482472ed91240731c60dbae8176bc1e32e1dfb694856da6759f6d32716325",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-alpine-openssl": {
+    "platform": "linux-x86_64",
+    "version": "3.5.9-r0",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/openssl-3.5.9-r0.apk",
+    "sha256": "9358e8f38eb19a1e035355626570c76bda1e5a49084c768fb0edc1e607251e99",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-alpine-libcrypto3": {
+    "platform": "linux-x86_64",
+    "version": "3.5.9-r0",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/libcrypto3-3.5.9-r0.apk",
+    "sha256": "6632d758d8f5e9ea3b650fe966f23bbf9a202f8b8dceecac93da135dec5e3689",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-alpine-libssl3": {
+    "platform": "linux-x86_64",
+    "version": "3.5.9-r0",
+    "url": "https://dl-cdn.alpinelinux.org/alpine/v3.24/main/x86_64/libssl3-3.5.9-r0.apk",
+    "sha256": "05e3393fb95aa5751ca2f9d242f659f6cff82c1cc7767cc2df4a086f7ad01877",
+    "archive_suffix": ".apk",
+    "source": "https://alpinelinux.org/",
+    "scope": "Dependency in isolated ColorNT-Policy WSL runtime; apk verifies repository signatures"
+  },
+  "policy-static-portable": {
+    "platform": "linux-x86_64",
+    "version": "secilc3.10-libsepol3.10-musl1.2.6-static",
+    "sha256": "86812381be6b6230a7754616c3be3597b178bc4c1a9f38b64f489c3b8814c5bb",
+    "source_revision": "ca10fc4204ed60540d41d2499127c18ad0643f9e",
+    "source": "https://github.com/SELinuxProject/selinux",
+    "build": "gcc -O2 -static -o secilc-static secilc.c /usr/lib/libsepol.a",
+    "url": "https://github.com/quyetbkhoa/nothingsvn_oplus-toolbuild/releases/download/toolbuild-v0.5.0rc3/secilc-static"
+  }
+}
